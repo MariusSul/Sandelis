@@ -16,7 +16,7 @@ public class Preke {
         this.kiekis = kiekis;
     }
 
-    public Integer getId() {
+    public Integer getId() {0
         return id;
     }
 
