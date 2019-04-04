@@ -1,5 +1,9 @@
 package com.marius.projects.sandelis;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Preke {
 
     private Integer id;
@@ -7,16 +11,22 @@ public class Preke {
     private String pavadinimas;
     private Double kaina;
     private Integer kiekis;
+    private List<String> tagai;
 
-    public Preke(Integer id, Integer pagaminimoData, String pavadinimas, Double kaina, Integer kiekis) {
-        this.id = id;
+    public Preke(String pavadinimas, Integer pagaminimoData, Double kaina, Integer kiekis, String... tagai) {
+
+        this.tagai = new ArrayList<>(Arrays.asList(tagai));
         this.pagaminimoData = pagaminimoData;
         this.pavadinimas = pavadinimas;
         this.kaina = kaina;
         this.kiekis = kiekis;
     }
 
-    public Integer getId() {0
+    public List<String> getTagai() {
+        return tagai;
+    }
+
+    public Integer getId() {
         return id;
     }
 

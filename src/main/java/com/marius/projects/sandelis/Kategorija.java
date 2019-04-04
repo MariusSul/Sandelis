@@ -2,7 +2,7 @@ package com.marius.projects.sandelis;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Deprecated
 public class Kategorija {
 
     private String pavadinimas;
