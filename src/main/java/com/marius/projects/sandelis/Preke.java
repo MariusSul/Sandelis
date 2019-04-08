@@ -13,8 +13,8 @@ public class Preke {
     private Integer kiekis;
     private List<String> tagai;
 
-    public Preke(String pavadinimas, Integer pagaminimoData, Double kaina, Integer kiekis, String... tagai) {
-
+    public Preke(Integer id, String pavadinimas, Integer pagaminimoData, Double kaina, Integer kiekis, String... tagai) {
+        this.id = id;
         this.tagai = new ArrayList<>(Arrays.asList(tagai));
         this.pagaminimoData = pagaminimoData;
         this.pavadinimas = pavadinimas;
