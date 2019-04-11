@@ -58,6 +58,9 @@ public class Sandelis {
         if (paieskosKriterijus(paieskosTxt ,""+preke.getPagaminimoData(),true)) {
             return true;
         }
+        if (paieskosKriterijus(paieskosTxt ,""+preke.getKiekis(),true)) {
+            return true;
+        }
         return false;
     }
 
