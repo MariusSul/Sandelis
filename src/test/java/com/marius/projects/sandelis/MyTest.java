@@ -8,7 +8,7 @@ import java.util.List;
 
 public class MyTest {
     @Test
-    public void search() {
+    public void searchByTag() {
 
         List<Preke> prekes = new ArrayList<>();
 
@@ -59,7 +59,7 @@ public class MyTest {
     }
 
     @Test
-    public void search2() {
+    public void search() {
 
         List<Preke> prekes = new ArrayList<>();
 
@@ -125,6 +125,38 @@ public class MyTest {
         List<Preke> availablePrekes = sandelis.searchPreke("a");
         Assert.assertEquals(0, availablePrekes.size());
 
+
+    }
+
+    @Test
+    public void searchByPrice() {
+
+        List<Preke> prekes = new ArrayList<>();
+        Preke preke0 = new Preke(1111, "ergdgf", 1, 0.60, 115, "preketag");
+        prekes.add(preke0);
+        Preke preke1 = new Preke(0, "1111", 1, 0.60, 115, "preketag");
+        prekes.add(preke1);
+        Preke preke2 = new Preke(1, "VANDUO", 2, 1.30, 70, "1111");
+        prekes.add(preke2);
+        Preke preke3 = new Preke(2, " Vanduo ", 1111, 1.20, 40, "preke");
+        prekes.add(preke3);
+        Preke preke4 = new Preke(3, "vanduo", 4, 1.30, 1111, "preke");
+        prekes.add(preke4);
+        Preke preke5 = new Preke(3, "vanduo", 5, 1111.0, 1, "preke");
+        prekes.add(preke5);
+
+
+
+        Sandelis sandelis = new Sandelis(prekes);
+        List<Preke> availablePrekes = sandelis.searchPreke("1.3");
+
+        Assert.assertEquals(2, availablePrekes.size());
+        Assert.assertFalse(availablePrekes.contains(preke0));
+        Assert.assertFalse(availablePrekes.contains(preke1));
+        Assert.assertTrue(availablePrekes.contains(preke2));
+        Assert.assertFalse(availablePrekes.contains(preke3));
+        Assert.assertTrue(availablePrekes.contains(preke4));
+        Assert.assertFalse(availablePrekes.contains(preke5));
 
     }
 }
